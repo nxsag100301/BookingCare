@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Display CRUD</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>List User</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>Sex</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(item=> { %>
+                    <tr>
+                        <td>
+                            <%= item.email %>
+                        </td>
+                        <td>
+                            <%= item.firstName %>
+                                <%= item.lastName %>
+                        </td>
+                        <td>
+                            <%= item.address %>
+                        </td>
+                        <td>
+                            <%= item.phonenumber %>
+                        </td>
+                        <td>
+                            <% if(item.gender==='M' ) { %>
+                                Male
+                                <% } else { %>
+                                    Female
+                                    <% } %>
+                        </td>
+                        <td>
+                            <% if (item.roleId==='R1' ) { %>
+                                Admin
+                                <% } else if (item.roleId==='R2' ) { %>
+                                    Doctor
+                                    <% } else if (item.roleId==='R3' ) { %>
+                                        Patient
+                                        <% } %>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary" onclick="location.href='/edit-crud/<%= item.id %>'"
+                                type="button">Edit</button>
+                            <form class="d-inline" action="/delete-crud/<%= item.id %>" method="POST">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
