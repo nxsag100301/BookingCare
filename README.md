@@ -1,4 +1,4 @@
-Technologies: Technologies: ReactJs, NodeJs, RESTful API, MySql,
+Technologies: ReactJs, NodeJs, RESTful API, MySql,
  Bootstrap
 
 Home: 
