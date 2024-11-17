@@ -24,6 +24,11 @@ Booking:
 ![image](https://github.com/user-attachments/assets/7ba2e248-85f1-49a3-a2da-07614000e50b)
 ![image](https://github.com/user-attachments/assets/00b00a26-3316-4f7b-a0b0-b5722ddfdb84)
 
+Install:
+Xampp
+npx sequelize-cli db:migrate  
+
+
 
 
 
