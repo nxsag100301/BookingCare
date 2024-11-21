@@ -1,4 +1,4 @@
-Technologies: ReactJs, NodeJs, RESTful API, MySql,
+Technologies: ReactJs, NodeJs(v14.17.0), RESTful API, MySql,
  Bootstrap
 
 Home: 
